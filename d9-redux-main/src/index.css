@@ -1,0 +1,8 @@
+.bi-x-circle-fill,
+.bi-suit-heart-fill {
+  color: #b5babe;
+}
+.bi-x-circle-fill:hover,
+.bi-suit-heart-fill:hover {
+  color: #dc3545;
+}
