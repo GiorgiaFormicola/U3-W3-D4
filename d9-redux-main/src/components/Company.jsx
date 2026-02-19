@@ -1,7 +1,7 @@
 import { Row, Col } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { REMOVE_FROM_FAVOURITES } from "../redux/actions";
+import { removeFromFavouritesAction } from "../redux/actions";
 
 const Company = ({ company }) => {
   const dispatch = useDispatch();
@@ -18,10 +18,7 @@ const Company = ({ company }) => {
           className="bi bi-x-circle-fill fs-5"
           style={{ cursor: "pointer" }}
           onClick={() => {
-            dispatch({
-              type: REMOVE_FROM_FAVOURITES,
-              payload: company,
-            });
+            dispatch(removeFromFavouritesAction(company));
           }}
         ></i>
       </Col>
