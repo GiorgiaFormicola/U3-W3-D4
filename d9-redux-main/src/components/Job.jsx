@@ -2,6 +2,7 @@ import { Row, Col } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { Link, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { ADD_TO_FAVOURITES, REMOVE_FROM_FAVOURITES } from "../redux/actions";
 
 const Job = ({ data }) => {
   const dispatch = useDispatch();
@@ -17,12 +18,12 @@ const Job = ({ data }) => {
           onClick={() => {
             if (!favouritesList.includes(data.company_name)) {
               dispatch({
-                type: "ADD_TO_FAVOURITES",
+                type: ADD_TO_FAVOURITES,
                 payload: data.company_name,
               });
             } else {
               dispatch({
-                type: "REMOVE_FROM_FAVOURITES",
+                type: REMOVE_FROM_FAVOURITES,
                 payload: data.company_name,
               });
             }

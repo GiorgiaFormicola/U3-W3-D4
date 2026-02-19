@@ -1,3 +1,5 @@
+import { ADD_TO_FAVOURITES, REMOVE_FROM_FAVOURITES } from "../actions";
+
 const initialState = {
   favourites: {
     list: [],
@@ -6,7 +8,7 @@ const initialState = {
 
 const mainReducer = (currentState = initialState, action) => {
   switch (action.type) {
-    case "ADD_TO_FAVOURITES":
+    case ADD_TO_FAVOURITES:
       return {
         ...currentState,
         favourites: {
@@ -15,7 +17,7 @@ const mainReducer = (currentState = initialState, action) => {
         },
       };
 
-    case "REMOVE_FROM_FAVOURITES":
+    case REMOVE_FROM_FAVOURITES:
       return {
         ...currentState,
         favourites: {
